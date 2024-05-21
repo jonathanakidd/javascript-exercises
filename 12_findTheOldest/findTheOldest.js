@@ -1,9 +1,8 @@
 const findTheOldest = function(people) {
-    people.reduce((oldest, person) => {
-        oldest = people[1];
-        if (age(oldest) < age(person)) {
+    oldest = people[0];
+    return people.reduce((oldest, person) => {
+        if (age(oldest.yearOfBirth, oldest.yearOfDeath) < age(person.yearOfBirth, person.yearOfDeath)) {
             oldest = person;
-            console.log(oldest)
         }
         return oldest
     })
